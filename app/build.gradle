@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "awe.devikamehra.joke_telling_app"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        free {
+            applicationId "awe.devikamehra.joke_telling_app.free"
+            resValue "string", "app_name", "Joke Telling App Free"
+        }
+        paid {
+            applicationId "awe.devikamehra.joke_telling_app.paid"
+            resValue "string", "app_name", "Joke Telling App Paid"
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    freeCompile 'com.google.android.gms:play-services:9.6.0'
+    compile project(':androiddisplay')
+    compile project(path: ':backend', configuration: 'android-endpoints')
+
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+}

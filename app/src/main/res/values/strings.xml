@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="instructions">Press Button for an awesome Joke</string>
+    <string name="button_text">Tell me a Joke</string>
+    <string name="title_activity_main">Joke Telling App Paid</string>
+    <string name="app_title">Joke Telling App</string>
+</resources>
